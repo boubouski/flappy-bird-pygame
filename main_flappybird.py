@@ -29,7 +29,7 @@ def scroll_img(img, scroll_speed):
 
 
 # start window 
-bird = pygame.image.load("python/pygame/flappy bird/assets/yellowbird-midflap.png")
+bird = pygame.image.load("assets/yellowbird-midflap.png")
 pygame.init()
 window = pygame.display.set_mode((288,512))
 pygame.display.set_caption("Flappy Bird")
@@ -45,8 +45,8 @@ new_score = 0
 clock = pygame.time.Clock() # controls the FPS of the game
 
 #font
-font = pygame.font.Font("python/pygame/flappy bird/font/Flappy-Bird.ttf", 50)
-font1 = pygame.font.Font("python/pygame/flappy bird/font/Flappy-Bird.ttf", 35) 
+font = pygame.font.Font("font/Flappy-Bird.ttf", 50)
+font1 = pygame.font.Font("font/Flappy-Bird.ttf", 35) 
 
 #text
 score_surf = font1.render(f"YOUR SCORE {score}", False, ("white"))
@@ -58,23 +58,23 @@ points_rect = points_surf.get_rect(center = (144, 70))
 play_again_surf = font1.render("CLICK TO PLAY!", False, ("white"))
 play_again_rect = play_again_surf.get_rect(center = (144, 410))
 #sprites
-bg = pygame.image.load("python/pygame/flappy bird/assets/background-day.png")
+bg = pygame.image.load("assets/background-day.png")
 
-floor = pygame.image.load("python/pygame/flappy bird/assets/base.png")
+floor = pygame.image.load("assets/base.png")
 
-bird = pygame.image.load("python/pygame/flappy bird/assets/yellowbird-midflap.png")
-bird_up = pygame.image.load("python/pygame/flappy bird/assets/yellowbird-upflap.png")
+bird = pygame.image.load("assets/yellowbird-midflap.png")
+bird_up = pygame.image.load("assets/yellowbird-upflap.png")
 
-bird_down = pygame.image.load("python/pygame/flappy bird/assets/yellowbird-downflap.png")
+bird_down = pygame.image.load("assets/yellowbird-downflap.png")
 bird_rect = bird.get_rect( center =(104,230))
 
 birds = [bird_up, bird, bird_down]
 birds_index = 0
 
-flappybirdmsg = pygame.image.load("python/pygame/flappy bird/assets/message.png")
+flappybirdmsg = pygame.image.load("assets/message.png")
 msg_rect = flappybirdmsg.get_rect(center =(144, 100))
 
-pipe = pygame.image.load("python/pygame/flappy bird/assets/pipe-green.png")
+pipe = pygame.image.load("assets/pipe-green.png")
 pipe_up = pygame.transform.rotozoom(pipe, 0, 0.85)
 pipe_down = pygame.transform.rotozoom(pipe, 180, 0.85)
 pipe_up_rect = pipe_up.get_rect()
@@ -84,10 +84,10 @@ pipes_up_list = []
 pipes_down_list = []   
 
 #sounds
-click_sound = pygame.mixer.Sound("python/pygame/flappy bird/sound/sfx_wing.wav")
-hit_sound = pygame.mixer.Sound("python/pygame/flappy bird/sound/sfx_hit.wav")
-point_sound = pygame.mixer.Sound("python/pygame/flappy bird/sound/sfx_point.wav")
-die_sound = pygame.mixer.Sound("python/pygame/flappy bird/sound/sfx_die.wav")
+click_sound = pygame.mixer.Sound("sound/sfx_wing.wav")
+hit_sound = pygame.mixer.Sound("sound/sfx_hit.wav")
+point_sound = pygame.mixer.Sound("sound/sfx_point.wav")
+die_sound = pygame.mixer.Sound("sound/sfx_die.wav")
 
 #timers
 pipe_event = pygame.USEREVENT + 1
